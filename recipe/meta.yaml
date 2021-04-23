@@ -1,5 +1,5 @@
 {% set name = "logrun" %}
-{% set version = "0.1.6" %}
+{% set version = "0.2.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/logrun-{{ version }}.tar.gz
-  sha256: f322929e1857d88289fe1dc82ad34d9ad167d422565cfb194b9d53043a7c6761
+  sha256: b51599ac535c9cf1ae1976cbdd99b2ccdc9fe3f7404bb0e454776bc22c088dd4
 
 build:
   number: 0
