@@ -7,24 +7,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/logrun-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/logrun-{{ version }}.tar.gz
   sha256: 38b3ca86514d797998c838cfb863af7e7fcdef5d36f1972c99624551ac39f7f2
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - dill
     - git
     - gitpython
     - psutil
-    - python >=3.6
+    - python >={{ python_min }}
     - python-xxhash
 
 test:
@@ -35,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/dccsillag/logrun
